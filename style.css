@@ -1537,16 +1537,17 @@ main section {
 
   .mobile-menu {
     position: fixed;
-    inset: 0 0 0 auto;
-    width: min(420px, 100%);
+    inset: 0;
+    width: 100%;
     padding: 112px 28px 36px;
     background:
-      linear-gradient(180deg, rgba(245, 233, 232, 0.995), rgba(235, 216, 214, 0.995));
-    backdrop-filter: blur(18px);
-    border-left: 1px solid rgba(90, 75, 71, 0.12);
-    box-shadow: -20px 0 48px rgba(76, 57, 52, 0.16);
-    transform: translateX(102%);
-    transition: transform var(--ease);
+      linear-gradient(180deg, rgba(244, 231, 230, 1), rgba(234, 214, 212, 1));
+    backdrop-filter: blur(22px);
+    box-shadow: 0 0 0 1px rgba(90, 75, 71, 0.06), 0 24px 60px rgba(76, 57, 52, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    transition: opacity var(--ease), visibility var(--ease);
     display: grid;
     align-content: start;
     gap: 18px;
@@ -1554,7 +1555,8 @@ main section {
   }
 
   .menu-open .mobile-menu {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .mobile-menu a {
@@ -1567,7 +1569,7 @@ main section {
 
   .mobile-social-float {
     position: fixed;
-    left: 24px;
+    right: 24px;
     bottom: 24px;
     z-index: 90;
     display: grid;
@@ -1720,8 +1722,8 @@ main section {
   }
 
   .mobile-social-float {
-    left: 16px;
-    bottom: 16px;
+    right: 16px;
+    bottom: 78px;
   }
 
   .mobile-social-float a {
