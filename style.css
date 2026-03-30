@@ -305,6 +305,9 @@ h3 {
   box-shadow: var(--shadow);
   color: var(--text);
   cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 60;
 }
 
 .nav-toggle span {
@@ -1416,6 +1419,10 @@ main section {
   display: none;
 }
 
+.mobile-social-float {
+  display: none;
+}
+
 @keyframes whatsappFloat {
   0%,
   100% {
@@ -1498,6 +1505,34 @@ main section {
   .nav-toggle {
     display: inline-grid;
     place-items: center;
+    width: 34px;
+    height: 26px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .nav-toggle span {
+    width: 26px;
+    height: 1.7px;
+    margin: 0;
+    background: #2f2320;
+  }
+
+  .nav-toggle span + span {
+    margin-top: 6px;
+  }
+
+  .menu-open .nav-toggle span:nth-child(1) {
+    transform: translateY(7.7px) rotate(45deg);
+  }
+
+  .menu-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7.7px) rotate(-45deg);
   }
 
   .mobile-menu {
@@ -1506,8 +1541,10 @@ main section {
     width: min(420px, 100%);
     padding: 112px 28px 36px;
     background:
-      linear-gradient(180deg, rgba(244, 232, 231, 0.98), rgba(237, 220, 219, 0.98));
-    box-shadow: -16px 0 40px rgba(76, 57, 52, 0.12);
+      linear-gradient(180deg, rgba(245, 233, 232, 0.995), rgba(235, 216, 214, 0.995));
+    backdrop-filter: blur(18px);
+    border-left: 1px solid rgba(90, 75, 71, 0.12);
+    box-shadow: -20px 0 48px rgba(76, 57, 52, 0.16);
     transform: translateX(102%);
     transition: transform var(--ease);
     display: grid;
@@ -1525,6 +1562,47 @@ main section {
     border-bottom: 1px solid var(--line);
     font-size: 1.1rem;
     font-family: "Cormorant Garamond", Georgia, serif;
+    color: var(--text);
+  }
+
+  .mobile-social-float {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 90;
+    display: grid;
+    gap: 10px;
+  }
+
+  .mobile-social-float a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(232, 206, 202, 0.96), rgba(214, 178, 172, 0.96));
+    color: #3b2c29;
+    border: 1px solid rgba(255, 244, 241, 0.5);
+    box-shadow: 0 20px 40px rgba(95, 67, 63, 0.18);
+    transition:
+      transform var(--ease),
+      box-shadow var(--ease),
+      background-color var(--ease);
+    animation: whatsappFloat 3.2s ease-in-out infinite;
+  }
+
+  .mobile-social-float a:hover,
+  .mobile-social-float a:focus-visible {
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, rgba(238, 216, 212, 1), rgba(220, 188, 182, 1));
+    box-shadow: 0 24px 46px rgba(95, 67, 63, 0.24);
+  }
+
+  .mobile-social-float svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
   }
 
   .about-page .page-hero {
@@ -1639,5 +1717,15 @@ main section {
     bottom: 16px;
     width: 54px;
     height: 54px;
+  }
+
+  .mobile-social-float {
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .mobile-social-float a {
+    width: 50px;
+    height: 50px;
   }
 }
