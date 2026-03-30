@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cura corpo Velluto Beauty Lab</title>
+  <desc id="desc">Placeholder visivo per la pagina dei trattamenti corpo di un centro estetico elegante.</desc>
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#efe2db"/>
+      <stop offset="100%" stop-color="#fdf8f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g2)"/>
+  <ellipse cx="910" cy="182" rx="220" ry="156" fill="#fff8f4" fill-opacity=".7"/>
+  <path d="M0 654c114-20 195-111 290-203 91-88 191-178 336-203 168-29 331 38 453 139 61 50 114 108 121 182V900H0Z" fill="#d4b5ae" fill-opacity=".5"/>
+  <path d="M460 238c120 56 166 173 174 284 7 98-18 194-26 292-4 49-1 96 14 140H250c50-87 87-180 111-273 28-109 36-222 99-319Z" fill="#f7ece7" fill-opacity=".74"/>
+</svg>

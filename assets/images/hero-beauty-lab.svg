@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Hero Velluto Beauty Lab</title>
+  <desc id="desc">Illustrazione placeholder elegante con forme morbide per il sito di un centro estetico premium.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8f746d"/>
+      <stop offset="45%" stop-color="#d8b9b4"/>
+      <stop offset="100%" stop-color="#f4e8e2"/>
+    </linearGradient>
+    <radialGradient id="light" cx="72%" cy="24%" r="46%">
+      <stop offset="0%" stop-color="#fff8f3" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#fff8f3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+  <rect width="1600" height="1100" fill="url(#light)"/>
+  <path d="M1080 1100c118-90 235-216 232-359-4-167-147-250-144-404 3-171 175-244 192-337H1600v1100Z" fill="#f8efea" fill-opacity=".5"/>
+  <path d="M0 842c153-40 267-174 373-334 77-118 161-252 317-312 116-44 248-39 357 14 95 47 172 123 236 223 58 90 103 197 191 250 46 28 89 35 126 39V1100H0Z" fill="#a98982" fill-opacity=".28"/>
+  <ellipse cx="1220" cy="288" rx="220" ry="266" fill="#fff8f3" fill-opacity=".28"/>
+  <path d="M812 200c52 42 116 118 136 223 17 88-4 169-35 243-26 62-54 123-60 194-8 102 26 201 52 240H560c26-66 47-152 39-242-9-101-54-182-75-276-24-110-8-225 61-320 59-82 151-139 227-162Z" fill="#f7ede8" fill-opacity=".52"/>
+</svg>

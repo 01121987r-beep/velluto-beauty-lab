@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Manicure premium Velluto Beauty Lab</title>
+  <desc id="desc">Placeholder elegante per manicure e pedicure premium.</desc>
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbf4f1"/>
+      <stop offset="100%" stop-color="#d7b1ab"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g3)"/>
+  <path d="M823 145c81 47 156 130 175 235 17 95-15 178-56 255-34 65-71 130-81 206-6 45-3 90 16 129H477c19-38 34-78 42-121 18-97-2-189-29-278-29-96-68-190-52-292 16-95 82-184 170-215 69-24 155-5 215 41Z" fill="#fff9f5" fill-opacity=".73"/>
+  <ellipse cx="290" cy="226" rx="180" ry="140" fill="#f0d9d5" fill-opacity=".55"/>
+  <path d="M0 702c118-64 241-86 365-65 173 29 284 148 399 216 123 73 275 98 436 47V900H0Z" fill="#c89d95" fill-opacity=".42"/>
+</svg>

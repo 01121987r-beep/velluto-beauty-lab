@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Atmosfera Velluto Beauty Lab</title>
+  <desc id="desc">Placeholder editoriale per raccontare l'atmosfera curata del beauty lab.</desc>
+  <defs>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#87706a"/>
+      <stop offset="100%" stop-color="#f0dfda"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g5)"/>
+  <rect width="1200" height="900" fill="#3f2f2c" fill-opacity=".16"/>
+  <ellipse cx="906" cy="205" rx="202" ry="150" fill="#fff8f2" fill-opacity=".78"/>
+  <path d="M112 900c32-69 50-139 62-204 28-151 44-308 135-427 106-139 305-220 463-172 173 53 265 203 324 365 51 138 87 289 104 438Z" fill="#f4e8e2" fill-opacity=".42"/>
+  <path d="M615 171c64 42 106 116 120 194 17 94-5 181-20 271-18 113-22 232 25 333H354c56-95 106-190 145-292 47-120 83-248 116-375Z" fill="#faf2ee" fill-opacity=".66"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Trattamenti speciali Velluto Beauty Lab</title>
+  <desc id="desc">Placeholder raffinato per trattamenti speciali ed esperienze su misura.</desc>
+  <defs>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e7e2"/>
+      <stop offset="100%" stop-color="#fff9f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g4)"/>
+  <circle cx="870" cy="260" r="190" fill="#fffefc" fill-opacity=".7"/>
+  <path d="M562 148c98 60 153 162 166 274 11 100-9 202-42 297-25 71-57 141-67 216h-270c57-96 91-204 94-320 3-111-22-231 34-330 44-79 116-145 205-137 29 2 55 12 80 28Z" fill="#fdf4ef" fill-opacity=".68"/>
+  <path d="M0 618c141-22 239-112 337-191 101-81 206-154 350-158 153-4 281 72 395 155 44 32 83 63 118 101V900H0Z" fill="#d3aea7" fill-opacity=".48"/>
+</svg>

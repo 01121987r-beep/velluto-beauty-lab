@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Trattamenti viso Velluto Beauty Lab</title>
+  <desc id="desc">Placeholder illustrato per una sezione dedicata ai trattamenti viso di un beauty lab.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8efeb"/>
+      <stop offset="100%" stop-color="#d9b9b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g1)"/>
+  <circle cx="820" cy="270" r="180" fill="#fff9f4" fill-opacity=".78"/>
+  <path d="M235 775c90-141 130-285 160-393 41-145 86-287 228-356 112-54 250-48 358 15 80 46 139 113 184 191V900H169c14-44 31-86 66-125Z" fill="#caa49d" fill-opacity=".42"/>
+  <path d="M597 185c42 39 74 88 92 151 36 123 3 244-32 360-24 80-46 159-52 239H359c6-91 31-183 55-269 32-116 65-231 90-348 15-66 45-113 93-133Z" fill="#fdf5f1" fill-opacity=".72"/>
+</svg>

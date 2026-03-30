@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Contatti Velluto Beauty Lab</title>
+  <desc id="desc">Placeholder soft per la pagina contatti di un centro estetico premium.</desc>
+  <defs>
+    <linearGradient id="g7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf6f2"/>
+      <stop offset="100%" stop-color="#d8b6af"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g7)"/>
+  <circle cx="872" cy="246" r="198" fill="#fffaf6" fill-opacity=".72"/>
+  <path d="M0 692c110-50 215-78 331-66 180 19 316 136 445 194 139 61 287 82 424 21V900H0Z" fill="#cfa7a0" fill-opacity=".48"/>
+  <path d="M646 160c97 56 148 166 163 273 11 84 2 169-8 252-8 68-17 137-13 205h-415c79-85 141-189 184-301 40-103 64-212 89-322Z" fill="#fef4ef" fill-opacity=".72"/>
+</svg>

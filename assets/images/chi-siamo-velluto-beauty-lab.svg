@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Chi siamo Velluto Beauty Lab</title>
+  <desc id="desc">Placeholder visivo per presentare la filosofia e il team di Velluto Beauty Lab.</desc>
+  <defs>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7eeea"/>
+      <stop offset="100%" stop-color="#d2aaa3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g6)"/>
+  <ellipse cx="328" cy="210" rx="190" ry="132" fill="#fff9f5" fill-opacity=".72"/>
+  <path d="M370 256c81-45 182-64 272-34 95 31 159 105 194 188 37 87 50 184 81 273 24 70 61 139 128 187V900H182c-12-82-2-169 39-243 46-83 124-140 175-217 46-70 69-154 62-240-5-57-22-110-30-166-9-61 8-131 52-178 19-20 42-37 70-50Z" fill="#fef6f2" fill-opacity=".72"/>
+</svg>
