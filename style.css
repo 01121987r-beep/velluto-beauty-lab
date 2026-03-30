@@ -1556,6 +1556,19 @@ main section {
     z-index: 120;
   }
 
+  .menu-open .site-header,
+  .menu-open .site-header.is-overlay,
+  .menu-open .site-header.is-scrolled,
+  .menu-open .site-header.is-solid {
+    background: #f1e2e1;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .menu-open .site-header::after {
+    background: rgba(90, 75, 71, 0.1);
+  }
+
   .menu-open .mobile-menu {
     opacity: 1;
     visibility: visible;
