@@ -1510,6 +1510,7 @@ main section {
     background: transparent;
     box-shadow: none;
     border-radius: 0;
+    z-index: 130;
   }
 
   .nav-toggle span {
@@ -1539,10 +1540,11 @@ main section {
     position: fixed;
     inset: 0;
     width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
     padding: 112px 28px 36px;
-    background:
-      linear-gradient(180deg, rgba(244, 231, 230, 1), rgba(234, 214, 212, 1));
-    backdrop-filter: blur(22px);
+    overflow-y: auto;
+    background: #f1e2e1;
     box-shadow: 0 0 0 1px rgba(90, 75, 71, 0.06), 0 24px 60px rgba(76, 57, 52, 0.18);
     opacity: 0;
     visibility: hidden;
@@ -1551,7 +1553,7 @@ main section {
     display: grid;
     align-content: start;
     gap: 18px;
-    z-index: 40;
+    z-index: 120;
   }
 
   .menu-open .mobile-menu {
