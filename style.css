@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Manrope:wght@400;500;600;700&display=swap");
 
 :root {
   --bg: #f1e2e1;
@@ -79,10 +79,10 @@ h2,
 h3,
 .display {
   margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
+  font-family: "Bodoni Moda", "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
 }
 
 h1 {
@@ -517,9 +517,16 @@ h3 {
 }
 
 .button-secondary {
-  border-color: rgba(255, 248, 245, 0.34);
+  border-color: rgba(255, 244, 241, 0.42);
   color: #fff8f5;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(166, 130, 125, 0.54);
+  box-shadow: 0 16px 30px rgba(39, 28, 26, 0.16);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background: rgba(179, 141, 136, 0.66);
+  box-shadow: 0 20px 38px rgba(39, 28, 26, 0.2);
 }
 
 .button-neutral {
@@ -1110,6 +1117,13 @@ main section {
   align-content: start;
 }
 
+.contact-meta-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+  gap: 34px;
+  align-items: start;
+}
+
 .contact-card h2 {
   max-width: none;
   width: 100%;
@@ -1578,7 +1592,7 @@ main section {
     padding: 14px 0;
     border-bottom: 1px solid var(--line);
     font-size: 1.1rem;
-    font-family: "Cormorant Garamond", Georgia, serif;
+    font-family: "Bodoni Moda", "Times New Roman", serif;
     color: var(--text);
   }
 
@@ -1660,6 +1674,11 @@ main section {
 
   .contact-map-panel {
     padding-top: 0;
+  }
+
+  .contact-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
