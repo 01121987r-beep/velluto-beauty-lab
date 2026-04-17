@@ -10,8 +10,8 @@
   --sand: #e9d8d6;
   --taupe: #8e7d78;
   --taupe-deep: #5a4b47;
-  --gold: #d4b06a;
-  --gold-soft: rgba(212, 176, 106, 0.88);
+  --gold: #b88e45;
+  --gold-soft: rgba(184, 142, 69, 0.92);
   --text: #302624;
   --text-soft: rgba(48, 38, 36, 0.72);
   --line: rgba(90, 75, 71, 0.12);
@@ -102,7 +102,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--taupe);
+  color: var(--gold-soft);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -114,7 +114,7 @@ h3 {
   content: "";
   width: 44px;
   height: 1px;
-  background: rgba(90, 75, 71, 0.28);
+  background: rgba(212, 176, 106, 0.55);
 }
 
 .site-header {
