@@ -136,7 +136,8 @@
         <p class="contact-form-intro">
           Compila il form e ti ricontatteremo al più presto con tutte le informazioni utili.
         </p>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="./send-contact.php" method="post" data-contact-form novalidate>
+          <input type="hidden" name="origine" value="Pagina contatti" />
           <label for="nome">Nome e cognome</label>
           <input id="nome" name="nome" type="text" placeholder="Il tuo nome" required />
 
@@ -166,8 +167,22 @@
             required
           ></textarea>
 
+          <p class="contact-form-status" data-form-status aria-live="polite"></p>
           <button class="button button-soft" type="submit">Invia richiesta</button>
         </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="thank-you-modal" aria-hidden="true" data-modal>
+      <div class="modal-panel modal-panel-compact" role="dialog" aria-modal="true" aria-labelledby="thank-you-title">
+        <button class="modal-close" type="button" aria-label="Chiudi messaggio di ringraziamento" data-modal-close>
+          <span></span>
+          <span></span>
+        </button>
+        <span class="kicker">Richiesta inviata</span>
+        <h2 id="thank-you-title">Grazie per averci scritto.</h2>
+        <p class="contact-form-intro">Sarai ricontattato a breve.</p>
+        <button class="button button-soft" type="button" data-modal-close>Chiudi</button>
       </div>
     </div>
 

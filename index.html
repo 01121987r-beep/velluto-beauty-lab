@@ -95,58 +95,13 @@
               </button>
             </div>
           </div>
-          <div class="hero-visual" data-reveal data-hero-slider>
+          <div class="hero-visual" data-reveal>
             <img
               class="hero-slide is-active"
-              src="./assets/images/foto-trattamento-bellezza.webp"
-              alt="Trattamento di bellezza professionale eseguito da Velluto Beauty Lab"
-            />
-            <img
-              class="hero-slide"
-              src="./assets/images/foto-cosmetica-pelle.webp"
-              alt="Applicazione cosmetica sulla pelle in cabina estetica di Velluto Beauty Lab"
-            />
-            <img
-              class="hero-slide"
-              src="./assets/images/foto-pelle-procedura.webp"
-              alt="Procedura professionale per la pelle eseguita nel centro estetico Velluto Beauty Lab"
-            />
-            <img
-              class="hero-slide"
-              src="./assets/images/foto-trattamento-capelli.webp"
-              alt="Trattamento beauty dedicato ai capelli in un ambiente elegante di Velluto Beauty Lab"
+              src="./assets/images/procedure-di-bellezza.webp"
+              alt="Trattamento viso rilassante con elementi naturali in centro estetico di lusso"
             />
           </div>
-        </div>
-      </section>
-
-      <section class="section" data-reveal>
-        <div class="intro-grid">
-          <div>
-            <div class="section-header">
-              <span class="kicker">L'identità del salone</span>
-              <h2>Un beauty lab pensato per chi cerca competenza, calma e risultati misurati.</h2>
-            </div>
-            <p class="statement">
-              Ogni percorso nasce dall'ascolto della pelle, delle abitudini e del tempo della persona,
-              per costruire trattamenti efficaci ma sempre delicati, con un'estetica del servizio fatta
-              di ordine, precisione e comfort.
-            </p>
-          </div>
-          <ul class="detail-list">
-            <li>
-              <strong>Approccio su misura</strong>
-              Analisi iniziale, proposta personalizzata e protocollo calibrato sulle esigenze reali.
-            </li>
-            <li>
-              <strong>Atmosfera riservata</strong>
-              Spazi morbidi, toni neutri e ritmo lento per favorire benessere e fiducia.
-            </li>
-            <li>
-              <strong>Professionalità costante</strong>
-              Standard elevati di igiene, accoglienza, consulenza e qualità del risultato finale.
-            </li>
-          </ul>
         </div>
       </section>
 
@@ -163,8 +118,8 @@
           <article class="service-feature">
             <div class="service-visual">
               <img
-                src="./assets/images/trattamento-viso-velluto-beauty-lab.svg"
-                alt="Placeholder elegante per i trattamenti viso di Velluto Beauty Lab"
+                src="./assets/images/trattamenti-viso.webp"
+                alt="Applicazione di crema viso durante trattamento estetico professionale"
               />
             </div>
             <div class="service-copy">
@@ -181,8 +136,8 @@
           <article class="service-feature">
             <div class="service-visual">
               <img
-                src="./assets/images/cura-corpo-velluto-beauty-lab.svg"
-                alt="Placeholder morbido per i trattamenti corpo del centro estetico Velluto Beauty Lab"
+                src="./assets/images/main-corpo.webp"
+                alt="Trattamento viso avanzato con tecnologia estetica professionale in salone di lusso"
               />
             </div>
             <div class="service-copy">
@@ -199,8 +154,8 @@
           <article class="service-feature">
             <div class="service-visual">
               <img
-                src="./assets/images/manicure-premium-velluto-beauty-lab.svg"
-                alt="Placeholder premium per manicure e pedicure professionale Velluto Beauty Lab"
+                src="./assets/images/manicure-e-pedicure.webp"
+                alt="Trattamento pedicure professionale in salone di bellezza con cliente in relax su poltrona comfort"
               />
             </div>
             <div class="service-copy">
@@ -247,7 +202,8 @@
         <p class="contact-form-intro">
           Compila il form e ti ricontatteremo al più presto con tutte le informazioni utili.
         </p>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="./send-contact.php" method="post" data-contact-form novalidate>
+          <input type="hidden" name="origine" value="Home page" />
           <label for="home-nome">Nome e cognome</label>
           <input id="home-nome" name="nome" type="text" placeholder="Il tuo nome" required />
 
@@ -277,8 +233,22 @@
             required
           ></textarea>
 
+          <p class="contact-form-status" data-form-status aria-live="polite"></p>
           <button class="button button-soft" type="submit">Invia richiesta</button>
         </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="thank-you-modal" aria-hidden="true" data-modal>
+      <div class="modal-panel modal-panel-compact" role="dialog" aria-modal="true" aria-labelledby="thank-you-title">
+        <button class="modal-close" type="button" aria-label="Chiudi messaggio di ringraziamento" data-modal-close>
+          <span></span>
+          <span></span>
+        </button>
+        <span class="kicker">Richiesta inviata</span>
+        <h2 id="thank-you-title">Grazie per averci scritto.</h2>
+        <p class="contact-form-intro">Sarai ricontattato a breve.</p>
+        <button class="button button-soft" type="button" data-modal-close>Chiudi</button>
       </div>
     </div>
 

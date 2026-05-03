@@ -951,10 +951,32 @@ main section {
 
 .service-visual {
   position: relative;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  padding-bottom: 18px;
+  min-height: 440px;
+}
+
+.service-visual::before,
+.service-visual::after {
+  content: "";
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.service-visual::before {
+  top: -14px;
+  left: 10px;
+  border-top: 1px solid rgba(90, 75, 71, 0.32);
+  border-left: 1px solid rgba(90, 75, 71, 0.32);
+}
+
+.service-visual::after {
+  right: -14px;
+  bottom: 14px;
+  border-right: 1px solid rgba(90, 75, 71, 0.32);
+  border-bottom: 1px solid rgba(90, 75, 71, 0.32);
 }
 
 .service-visual img,
@@ -965,6 +987,12 @@ main section {
   height: 100%;
   object-fit: cover;
   transition: transform 700ms ease;
+}
+
+.service-visual img {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
 }
 
 .service-feature:hover .service-visual img,
@@ -1230,6 +1258,26 @@ main section {
   margin-top: 8px;
 }
 
+.contact-form-status {
+  min-height: 1.5rem;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.contact-form-status.is-success {
+  color: #47664c;
+}
+
+.contact-form-status.is-error {
+  color: #8a4a4a;
+}
+
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1268,6 +1316,19 @@ main section {
 
 .modal-panel-wide {
   width: min(100%, 760px);
+}
+
+.modal-panel-compact {
+  width: min(100%, 560px);
+  padding-bottom: 34px;
+}
+
+.modal-panel-compact .contact-form-intro {
+  margin-bottom: 18px;
+}
+
+.modal-panel-compact .button {
+  margin-top: 8px;
 }
 
 .modal-panel h2 {

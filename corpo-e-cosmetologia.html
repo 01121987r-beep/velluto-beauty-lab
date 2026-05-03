@@ -94,8 +94,8 @@
             </div>
             <div class="hero-photo-frame">
               <img
-                src="./assets/images/foto-corpo-e-cosmetologia.webp"
-                alt="Trattamento corpo e cosmetologia eseguito in un ambiente elegante di Velluto Beauty Lab"
+                src="./assets/images/corpo-e-cosmetologia.webp"
+                alt="Trattamento viso con strumenti crioterapici per tonificare e rivitalizzare la pelle"
               />
             </div>
           </div>
@@ -234,7 +234,8 @@
         <p class="contact-form-intro">
           La tua richiesta sara gia riferita alla sezione Corpo & cosmetologia, cosi potremo risponderti in modo piu preciso e rapido.
         </p>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="./send-contact.php" method="post" data-contact-form novalidate>
+          <input type="hidden" name="origine" value="Corpo & cosmetologia" />
           <label for="corpo-nome">Nome e cognome</label>
           <input id="corpo-nome" name="nome" type="text" placeholder="Il tuo nome" required />
 
@@ -258,8 +259,22 @@
             required
           ></textarea>
 
+          <p class="contact-form-status" data-form-status aria-live="polite"></p>
           <button class="button button-soft" type="submit">Invia richiesta</button>
         </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="thank-you-modal" aria-hidden="true" data-modal>
+      <div class="modal-panel modal-panel-compact" role="dialog" aria-modal="true" aria-labelledby="thank-you-title">
+        <button class="modal-close" type="button" aria-label="Chiudi messaggio di ringraziamento" data-modal-close>
+          <span></span>
+          <span></span>
+        </button>
+        <span class="kicker">Richiesta inviata</span>
+        <h2 id="thank-you-title">Grazie per averci scritto.</h2>
+        <p class="contact-form-intro">Sarai ricontattato a breve.</p>
+        <button class="button button-soft" type="button" data-modal-close>Chiudi</button>
       </div>
     </div>
 

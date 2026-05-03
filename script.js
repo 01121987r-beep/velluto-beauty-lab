@@ -7,6 +7,21 @@ const modalTriggers = document.querySelectorAll("[data-modal-open]");
 const modalClosers = document.querySelectorAll("[data-modal-close]");
 const modals = document.querySelectorAll("[data-modal]");
 const pricingTabs = document.querySelectorAll("[data-pricing-tab]");
+const contactForms = document.querySelectorAll("[data-contact-form]");
+const setModalState = (modal, isOpen) => {
+  if (!modal) return;
+  modal.classList.toggle("is-open", isOpen);
+  modal.setAttribute("aria-hidden", String(!isOpen));
+
+  const hasOpenModal = Array.from(document.querySelectorAll("[data-modal]")).some((item) =>
+    item.classList.contains("is-open")
+  );
+
+  document.body.classList.toggle("menu-open", hasOpenModal || document.body.classList.contains("menu-open"));
+  if (!hasOpenModal && mobileMenu?.getAttribute("aria-hidden") === "true") {
+    document.body.classList.remove("menu-open");
+  }
+};
 
 if (header) {
   const updateHeader = () => {
@@ -86,17 +101,11 @@ if (heroSlider) {
 
 if (modals.length) {
   const openModal = (modal) => {
-    if (!modal) return;
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("menu-open");
+    setModalState(modal, true);
   };
 
   const closeModal = (modal) => {
-    if (!modal) return;
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("menu-open");
+    setModalState(modal, false);
   };
 
   modalTriggers.forEach((trigger) => {
@@ -145,6 +154,118 @@ if (pricingTabs.length) {
         panel.classList.toggle("is-active", isActive);
         panel.hidden = !isActive;
       });
+    });
+  });
+}
+
+if (contactForms.length) {
+  contactForms.forEach((form) => {
+    const submitButton = form.querySelector("button[type='submit']");
+    const status = form.querySelector("[data-form-status]");
+    const emailField = form.querySelector("input[name='email']");
+    const nameField = form.querySelector("input[name='nome']");
+    const messageField = form.querySelector("textarea[name='messaggio']");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!(submitButton instanceof HTMLButtonElement)) return;
+
+      const formData = new FormData(form);
+      submitButton.disabled = true;
+      submitButton.textContent = "Invio in corso...";
+
+      if (status) {
+        status.textContent = "";
+        status.classList.remove("is-error", "is-success");
+      }
+
+      const nome = nameField instanceof HTMLInputElement ? nameField.value.trim() : "";
+      const email = emailField instanceof HTMLInputElement ? emailField.value.trim() : "";
+      const messaggio = messageField instanceof HTMLTextAreaElement ? messageField.value.trim() : "";
+      const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!nome || !email || !messaggio || !emailIsValid) {
+        if (status) {
+          status.textContent = !emailIsValid && email
+            ? "Inserisci un indirizzo email valido."
+            : "Compila nome, email e messaggio prima di inviare.";
+          status.classList.add("is-error");
+        }
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Invia richiesta";
+        return;
+      }
+
+      if (window.location.protocol === "file:") {
+        if (status) {
+          status.textContent =
+            "Il form non puo funzionare in anteprima locale. Va testato su un hosting o server con supporto PHP.";
+          status.classList.add("is-error");
+        }
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Invia richiesta";
+        return;
+      }
+
+      let endpoint = "";
+
+      try {
+        endpoint = new URL(form.getAttribute("action") || "./send-contact.php", window.location.href).toString();
+      } catch (error) {
+        if (status) {
+          status.textContent =
+            "Configurazione del form non valida. Controlla il percorso del file PHP sul server.";
+          status.classList.add("is-error");
+        }
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Invia richiesta";
+        return;
+      }
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Invio non riuscito.");
+        }
+
+        if (status) {
+          status.textContent = result.message;
+          status.classList.add("is-success");
+        }
+
+        form.reset();
+        setTimeout(() => {
+          const parentModal = form.closest("[data-modal]");
+          const thankYouModal = document.getElementById("thank-you-modal");
+
+          setModalState(parentModal, false);
+          setModalState(thankYouModal, true);
+        }, 180);
+      } catch (error) {
+        if (status) {
+          status.textContent =
+            error instanceof Error
+              ? error.message
+              : "Invio non riuscito. Riprova tra poco oppure contattaci via telefono o WhatsApp.";
+          status.classList.add("is-error");
+        }
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Invia richiesta";
+      }
     });
   });
 }
