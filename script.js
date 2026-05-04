@@ -165,6 +165,7 @@ if (contactForms.length) {
     const emailField = form.querySelector("input[name='email']");
     const nameField = form.querySelector("input[name='nome']");
     const messageField = form.querySelector("textarea[name='messaggio']");
+    const termsField = form.querySelector("input[name='termini']");
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -183,13 +184,16 @@ if (contactForms.length) {
       const nome = nameField instanceof HTMLInputElement ? nameField.value.trim() : "";
       const email = emailField instanceof HTMLInputElement ? emailField.value.trim() : "";
       const messaggio = messageField instanceof HTMLTextAreaElement ? messageField.value.trim() : "";
+      const termsAccepted = termsField instanceof HTMLInputElement ? termsField.checked : false;
       const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-      if (!nome || !email || !messaggio || !emailIsValid) {
+      if (!nome || !email || !messaggio || !emailIsValid || !termsAccepted) {
         if (status) {
           status.textContent = !emailIsValid && email
             ? "Inserisci un indirizzo email valido."
-            : "Compila nome, email e messaggio prima di inviare.";
+            : !termsAccepted
+              ? "Devi accettare il trattamento dei dati per inviare la richiesta."
+              : "Compila nome, email e messaggio prima di inviare.";
           status.classList.add("is-error");
         }
 

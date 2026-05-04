@@ -75,11 +75,10 @@
         <div class="hero-inner">
           <div class="hero-copy" data-reveal>
             <span class="eyebrow">Velluto Beauty Lab</span>
-            <h1 id="hero-title">La bellezza incontra il silenzio dei dettagli.</h1>
+            <h1 id="hero-title">Benvenuti da Velluto Beauty Lab.</h1>
             <p>
-              Velluto Beauty Lab accoglie ogni ospite in uno spazio essenziale, luminoso e riservato,
-              dove trattamenti personalizzati e gesti misurati trasformano la cura estetica in un
-              rituale di benessere autentico.
+              Velluto Beauty Lab è aperto sette giorni su sette, dalle 09:30 alle 19:30. Parcheggio a
+              pagamento disponibile direttamente sotto il salone.
             </p>
             <div class="hero-actions">
               <a
@@ -88,7 +87,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Prenota un trattamento
+                PRENOTA IL TUO RITUALE
               </a>
               <button class="button button-secondary" type="button" data-modal-open="contact-modal">
                 Richiedi una consulenza
@@ -106,15 +105,35 @@
       </section>
 
       <section class="section soft-band" id="servizi-in-evidenza" data-reveal>
-        <div class="section-header">
-          <span class="kicker">Servizi in evidenza</span>
-          <h2>Percorsi essenziali, trattamenti completi, cura visibile.</h2>
-          <p>
-            Le principali aree di trattamento sono organizzate per accompagnare ogni cliente in un
-            percorso chiaro, elegante e facilmente consultabile.
-          </p>
-        </div>
         <div class="services-layout">
+          <article class="service-feature service-feature-highlight">
+            <div class="service-visual">
+              <img
+                src="./assets/images/procedura-4-6-mani.webp"
+                alt="Manicure professionale con trattamento unghie in salone di bellezza di lusso"
+              />
+            </div>
+            <div class="service-copy">
+              <span class="kicker">Trattamenti a 4/6 mani</span>
+              <h3>Per chi vuole ottimizzare il tempo senza rinunciare a nulla.</h3>
+              <p>
+                Velluto offre appuntamenti combinati: a 4 mani manicure e pedicure in contemporanea (+10€),
+                a 6 mani extension ciglia, manicure e pedicure nello stesso appuntamento. Su prenotazione.
+              </p>
+              <div class="section-actions">
+                <a
+                  class="button button-primary"
+                  href="https://wa.me/393331898962"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PRENOTA IL TUO RITUALE
+                </a>
+                <a class="inline-link" href="./mani.html">Esplora servizi 4/6 mani</a>
+              </div>
+            </div>
+          </article>
+
           <article class="service-feature">
             <div class="service-visual">
               <img
@@ -171,24 +190,6 @@
         </div>
       </section>
 
-      <section class="cta-section" data-reveal>
-        <div class="cta-panel">
-          <div>
-            <span class="kicker">Prenotazione e consulenza</span>
-            <h2>Scopri il trattamento più adatto e costruisci il tuo rituale di bellezza.</h2>
-          </div>
-          <div>
-            <p>
-              Contattaci per una prima consulenza o per ricevere informazioni su percorsi viso, corpo e
-              trattamenti speciali.
-            </p>
-            <div class="cta-actions">
-              <a class="button button-soft" href="./contatti.html">Contatta il salone</a>
-              <a class="button button-neutral" href="tel:+393331898962">Chiama ora</a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <div class="modal-overlay" id="contact-modal" aria-hidden="true" data-modal>
@@ -232,6 +233,11 @@
             placeholder="Raccontaci di cosa hai bisogno o quando vorresti prenotare."
             required
           ></textarea>
+
+          <label class="checkbox-field" for="home-termini">
+            <input id="home-termini" name="termini" type="checkbox" value="accettato" required />
+            <span>Acconsento al trattamento dei dati personali per essere ricontattato da Velluto Beauty Lab.</span>
+          </label>
 
           <p class="contact-form-status" data-form-status aria-live="polite"></p>
           <button class="button button-soft" type="submit">Invia richiesta</button>

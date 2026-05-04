@@ -45,8 +45,9 @@ $trattamento = trim((string) ($_POST['trattamento'] ?? ''));
 $messaggio = trim((string) ($_POST['messaggio'] ?? ''));
 $origine = trim((string) ($_POST['origine'] ?? 'Sito'));
 $sezione = trim((string) ($_POST['sezione'] ?? ''));
+$termini = trim((string) ($_POST['termini'] ?? ''));
 
-if ($nome === '' || $messaggio === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if ($nome === '' || $messaggio === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || $termini === '') {
     http_response_code(422);
     echo json_encode([
         'success' => false,
@@ -80,6 +81,7 @@ $body = implode("\n", [
     'Email: ' . $email,
     'Telefono: ' . $telefonoLabel,
     'Trattamento di interesse: ' . $trattamentoLabel,
+    'Consenso privacy: Accettato',
     '',
     'Messaggio:',
     $messaggio,
