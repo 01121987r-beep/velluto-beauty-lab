@@ -2214,13 +2214,32 @@ main section {
     display: none;
   }
 
+  .contact-page .contact-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .contact-page .contact-card {
+    width: 100%;
+    max-width: 430px;
+    justify-self: center;
+  }
+
   .contact-mobile-map {
     display: block;
     width: 100%;
+    max-width: 100%;
     margin-top: 18px;
     aspect-ratio: 1.55 / 1;
     min-height: 210px;
     border-radius: 18px;
+    box-shadow: 0 16px 34px rgba(95, 67, 63, 0.12);
+  }
+
+  .contact-mobile-map iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
   }
 
   .first-editorial-section {
@@ -2230,6 +2249,35 @@ main section {
   .contact-meta-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .contact-page .contact-card,
+  .contact-page .contact-card h2,
+  .contact-page .contact-card p,
+  .contact-page .contact-meta,
+  .contact-page .hours-list,
+  .contact-page .contact-meta li,
+  .contact-page .hours-list li {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .contact-page .contact-card h2 {
+    font-size: clamp(2.25rem, 9.6vw, 3rem);
+    line-height: 1.02;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .contact-page .contact-card p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contact-page .parking-note {
+    max-width: 100%;
+    white-space: normal;
   }
 }
 
