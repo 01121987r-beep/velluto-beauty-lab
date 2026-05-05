@@ -59,11 +59,11 @@ if ($nome === '' || $messaggio === '' || !filter_var($email, FILTER_VALIDATE_EMA
 $trattamenti = [
     '4-6-mani' => '4/6 Mani',
     'capelli' => 'Capelli',
-    'corpo' => 'Corpo & cosmetologia',
+    'corpo' => 'Viso & cosmetologia',
     'mani-piedi' => 'Mani & piedi',
     'brow-lash' => 'Brow & lash bar',
     'epilazione' => 'Epilazione',
-    'Corpo & cosmetologia' => 'Corpo & cosmetologia',
+    'Viso & cosmetologia' => 'Viso & cosmetologia',
 ];
 
 $trattamentoLabel = $trattamenti[$trattamento] ?? ($trattamento !== '' ? $trattamento : 'Non specificato');

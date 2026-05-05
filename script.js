@@ -138,10 +138,41 @@ if (modals.length) {
 
 if (pricingTabs.length) {
   const pricingPanels = document.querySelectorAll("[data-pricing-stage] [role='tabpanel']");
+  const pricingCopy = document.querySelector("[data-pricing-copy]");
+  const pricingSubTabs = document.querySelectorAll("[data-pricing-subtab]");
+
+  const activatePricingSubTab = (tab) => {
+    const targetId = tab.dataset.pricingSubtab;
+    const parentPanel = tab.closest("[role='tabpanel']");
+    const nextCopy = tab.dataset.pricingCopy;
+
+    if (!parentPanel) return;
+
+    const siblingTabs = parentPanel.querySelectorAll("[data-pricing-subtab]");
+    const siblingPanels = parentPanel.querySelectorAll("[data-pricing-substage] [role='tabpanel']");
+
+    siblingTabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-selected", String(isActive));
+    });
+
+    siblingPanels.forEach((panel) => {
+      const isActive = panel.id === targetId;
+      panel.classList.toggle("is-active", isActive);
+      panel.hidden = !isActive;
+    });
+
+    if (pricingCopy && nextCopy) {
+      pricingCopy.textContent = nextCopy;
+    }
+  };
 
   pricingTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       const targetId = tab.dataset.pricingTab;
+      const nextCopy = tab.dataset.pricingCopy;
+      let activePanel = null;
 
       pricingTabs.forEach((item) => {
         const isActive = item === tab;
@@ -153,8 +184,23 @@ if (pricingTabs.length) {
         const isActive = panel.id === targetId;
         panel.classList.toggle("is-active", isActive);
         panel.hidden = !isActive;
+        if (isActive) {
+          activePanel = panel;
+        }
       });
+
+      const firstSubTab = activePanel?.querySelector("[data-pricing-subtab]");
+
+      if (firstSubTab) {
+        activatePricingSubTab(firstSubTab);
+      } else if (pricingCopy && nextCopy) {
+        pricingCopy.textContent = nextCopy;
+      }
     });
+  });
+
+  pricingSubTabs.forEach((tab) => {
+    tab.addEventListener("click", () => activatePricingSubTab(tab));
   });
 }
 
