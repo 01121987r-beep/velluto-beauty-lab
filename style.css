@@ -2550,7 +2550,7 @@ main section {
 
   .hero {
     min-height: auto;
-    padding: 86px 0 54px;
+    padding: 98px 0 54px;
   }
 
   .hero-copy {
@@ -2709,20 +2709,20 @@ main section {
   }
 
   .first-editorial-section {
-    padding-top: 88px !important;
+    padding-top: 100px !important;
   }
 
   .page-hero {
-    padding: 88px 0 62px;
+    padding: 100px 0 62px;
   }
 
   .contact-page main > .section:first-of-type {
-    padding-top: 88px;
+    padding-top: 100px;
   }
 
   .about-page .page-hero,
   .editorial-page .page-hero {
-    padding-top: 88px;
+    padding-top: 100px;
   }
 
   .story-media,
