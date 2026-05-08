@@ -2549,16 +2549,16 @@ main section {
   }
 
   .hero {
-    padding: 148px 0 74px;
+    padding: 104px 0 64px;
   }
 
   .hero-copy {
-    padding-top: 56px;
+    padding-top: 18px;
   }
 
   .hero-inner {
     grid-template-columns: 1fr;
-    min-height: calc(100svh - 220px);
+    min-height: calc(100svh - 150px);
     min-width: 0;
   }
 
@@ -2664,19 +2664,20 @@ main section {
   }
 
   .first-editorial-section {
-    padding-top: 164px !important;
+    padding-top: 112px !important;
   }
 
   .page-hero {
-    padding: 168px 0 84px;
+    padding: 112px 0 70px;
   }
 
-  .about-page .page-hero {
-    padding-top: 188px;
+  .contact-page main > .section:first-of-type {
+    padding-top: 112px;
   }
 
+  .about-page .page-hero,
   .editorial-page .page-hero {
-    padding-top: 188px;
+    padding-top: 112px;
   }
 
   .story-media,
