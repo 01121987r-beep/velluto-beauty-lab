@@ -57,7 +57,7 @@ if ($nome === '' || $messaggio === '' || !filter_var($email, FILTER_VALIDATE_EMA
 }
 
 $trattamenti = [
-    '4-6-mani' => '4/6 Mani',
+    '4-6-mani' => 'Corpo',
     'capelli' => 'Capelli',
     'corpo' => 'Viso & cosmetologia',
     'mani-piedi' => 'Mani & piedi',

@@ -1039,6 +1039,48 @@ main section {
   letter-spacing: 0.03em;
 }
 
+.hair-price-table {
+  display: grid;
+  width: min(100%, 980px);
+  border-top: 1px solid rgba(90, 75, 71, 0.14);
+}
+
+.hair-price-head,
+.hair-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(112px, 0.22fr) minmax(112px, 0.22fr);
+  gap: 20px;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(90, 75, 71, 0.08);
+}
+
+.hair-price-head {
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hair-price-head span:nth-child(n + 2),
+.hair-price-row strong {
+  text-align: right;
+}
+
+.hair-price-row span {
+  color: var(--taupe-deep);
+  font-size: clamp(0.98rem, 1.45vw, 1.12rem);
+  line-height: 1.35;
+}
+
+.hair-price-row strong {
+  color: var(--text);
+  font-size: clamp(0.98rem, 1.45vw, 1.12rem);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 @keyframes pricingFade {
   from {
     opacity: 0;
@@ -2385,6 +2427,23 @@ main section {
 
   .knowledge-list p {
     max-width: none;
+  }
+
+  .hair-price-head,
+  .hair-price-row {
+    grid-template-columns: minmax(0, 1fr) minmax(76px, auto) minmax(76px, auto);
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .hair-price-head {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hair-price-row span,
+  .hair-price-row strong {
+    font-size: 0.9rem;
   }
 
   .section-actions,
