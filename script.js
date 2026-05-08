@@ -8,6 +8,219 @@ const modalClosers = document.querySelectorAll("[data-modal-close]");
 const modals = document.querySelectorAll("[data-modal]");
 const pricingTabs = document.querySelectorAll("[data-pricing-tab]");
 const contactForms = document.querySelectorAll("[data-contact-form]");
+
+const protectImages = () => {
+  document.querySelectorAll("img").forEach((image) => {
+    image.setAttribute("draggable", "false");
+  });
+};
+
+protectImages();
+
+document.addEventListener("contextmenu", (event) => {
+  if (event.target instanceof HTMLImageElement) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("dragstart", (event) => {
+  if (event.target instanceof HTMLImageElement) {
+    event.preventDefault();
+  }
+});
+
+const legalContent = {
+  privacy: {
+    kicker: "Informativa privacy",
+    title: "Privacy policy",
+    body: `
+      <p><strong>Titolare del trattamento:</strong> VELLUTO BEAUTY LAB SRLS, P.IVA 16154221002, Via dell'Amba Aradam 27, 00184 Roma. Email: <a href="mailto:vellutobeautylab@gmail.com">vellutobeautylab@gmail.com</a>.</p>
+      <p>I dati personali inviati tramite i form del sito, telefono, email o WhatsApp vengono utilizzati esclusivamente per ricontattare la persona interessata, fornire informazioni sui trattamenti richiesti, gestire appuntamenti e rispondere a richieste di consulenza.</p>
+      <p><strong>Dati trattati:</strong> nome e cognome, email, telefono, trattamento di interesse, messaggio inviato, eventuale sezione del sito da cui proviene la richiesta.</p>
+      <p><strong>Base giuridica:</strong> esecuzione di misure precontrattuali richieste dall'utente e legittimo interesse del titolare a rispondere alle richieste ricevute. Per eventuali comunicazioni promozionali sarà richiesto consenso separato.</p>
+      <p><strong>Conservazione:</strong> i dati vengono conservati per il tempo necessario a gestire la richiesta e, se nasce un rapporto con il cliente, per i tempi previsti dagli obblighi amministrativi, fiscali e legali applicabili.</p>
+      <p><strong>Destinatari:</strong> i dati possono essere trattati da personale autorizzato e da fornitori tecnici strettamente necessari al funzionamento del sito, della posta elettronica e degli strumenti di comunicazione. I dati non vengono venduti né ceduti a terzi per finalità di marketing.</p>
+      <p><strong>Diritti dell'interessato:</strong> puoi chiedere accesso, rettifica, cancellazione, limitazione, opposizione al trattamento e portabilità dei dati, scrivendo a <a href="mailto:vellutobeautylab@gmail.com">vellutobeautylab@gmail.com</a>. Puoi inoltre proporre reclamo al Garante per la protezione dei dati personali.</p>
+    `
+  },
+  cookie: {
+    kicker: "Cookie policy",
+    title: "Cookie e preferenze",
+    body: `
+      <p>Questo sito utilizza cookie tecnici necessari al corretto funzionamento dell'interfaccia, ad esempio per ricordare la scelta relativa al banner cookie.</p>
+      <p>Non utilizziamo cookie di profilazione o marketing proprietari. Il sito può incorporare servizi di terze parti, come Google Maps, link a Instagram, Facebook e WhatsApp: tali servizi possono applicare proprie regole su cookie e tracciamenti quando vengono caricati o quando interagisci con essi.</p>
+      <p>Puoi accettare tutti i cookie o rifiutare quelli non necessari. In qualsiasi momento puoi modificare la scelta dal link “Cookie” nel footer.</p>
+      <div class="legal-choice">
+        <button class="button button-soft" type="button" data-cookie-choice="accepted">Accetta cookie</button>
+        <button class="button button-neutral" type="button" data-cookie-choice="rejected">Rifiuta non necessari</button>
+      </div>
+    `
+  },
+  terms: {
+    kicker: "Termini",
+    title: "Termini di utilizzo",
+    body: `
+      <p>Le informazioni presenti su questo sito hanno finalità informative e descrivono i servizi offerti da Velluto Beauty Lab. Non costituiscono diagnosi medica, prescrizione o sostituzione di consulenza professionale personalizzata.</p>
+      <p>Prezzi, trattamenti, disponibilità e durata dei servizi possono variare o essere aggiornati. La prenotazione viene confermata solo tramite contatto diretto con il salone.</p>
+      <p>L'utente si impegna a inviare dati corretti e pertinenti tramite i form. I dati inseriti vengono usati solo per ricontattare il cliente o potenziale cliente e gestire la richiesta inviata.</p>
+      <p>Testi, immagini, layout e contenuti del sito sono destinati alla comunicazione del brand Velluto Beauty Lab e non possono essere copiati o riutilizzati senza autorizzazione.</p>
+    `
+  }
+};
+
+const cookieStorageKey = "velluto_cookie_choice";
+
+const loadExternalMaps = () => {
+  document.querySelectorAll("[data-cookie-map]").forEach((map) => {
+    const source = map.dataset.src;
+    if (!source || map.getAttribute("src") === source) return;
+
+    map.setAttribute("src", source);
+    map.closest(".map-embed")?.classList.add("is-loaded");
+  });
+};
+
+const unloadExternalMaps = () => {
+  document.querySelectorAll("[data-cookie-map]").forEach((map) => {
+    map.setAttribute("src", "about:blank");
+    map.closest(".map-embed")?.classList.remove("is-loaded");
+  });
+};
+
+const openLegalModal = (type = "privacy") => {
+  const modal = document.querySelector("[data-legal-modal]");
+  const content = legalContent[type] || legalContent.privacy;
+
+  if (!modal) return;
+
+  modal.querySelector("[data-legal-kicker]").textContent = content.kicker;
+  modal.querySelector("[data-legal-title]").textContent = content.title;
+  modal.querySelector("[data-legal-body]").innerHTML = content.body;
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("legal-open");
+};
+
+const closeLegalModal = () => {
+  const modal = document.querySelector("[data-legal-modal]");
+  if (!modal) return;
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("legal-open");
+};
+
+const setCookieChoice = (choice) => {
+  localStorage.setItem(cookieStorageKey, choice);
+  document.querySelector("[data-cookie-banner]")?.classList.remove("is-visible");
+
+  if (choice === "accepted") {
+    loadExternalMaps();
+  } else {
+    unloadExternalMaps();
+  }
+};
+
+const initLegalUi = () => {
+  const footerSocialBlocks = document.querySelectorAll(".footer-social");
+
+  footerSocialBlocks.forEach((block) => {
+    if (block.querySelector("[data-legal-open]")) return;
+
+    const legalLinks = document.createElement("div");
+    legalLinks.className = "footer-legal-links";
+    legalLinks.innerHTML = `
+      <button type="button" data-legal-open="privacy">Privacy</button>
+      <button type="button" data-legal-open="cookie">Cookie</button>
+      <button type="button" data-legal-open="terms">Termini</button>
+    `;
+    block.appendChild(legalLinks);
+  });
+
+  if (!document.querySelector("[data-legal-modal]")) {
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      `
+        <div class="legal-modal-overlay" aria-hidden="true" data-legal-modal>
+          <div class="legal-modal-panel" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+            <button class="modal-close" type="button" aria-label="Chiudi informativa" data-legal-close>
+              <span></span>
+              <span></span>
+            </button>
+            <span class="kicker" data-legal-kicker></span>
+            <h2 id="legal-modal-title" data-legal-title></h2>
+            <div class="legal-copy" data-legal-body></div>
+          </div>
+        </div>
+      `
+    );
+  }
+
+  if (!document.querySelector("[data-cookie-banner]")) {
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      `
+        <section class="cookie-banner" aria-label="Preferenze cookie" data-cookie-banner>
+          <div>
+            <span class="kicker">Privacy e cookie</span>
+            <p>
+              Utilizziamo cookie tecnici necessari e, solo con consenso, servizi esterni utili alla navigazione.
+              I dati dei form vengono usati esclusivamente per ricontattarti.
+            </p>
+          </div>
+          <div class="cookie-actions">
+            <button class="button button-soft" type="button" data-cookie-choice="accepted">Accetta</button>
+            <button class="button button-neutral" type="button" data-cookie-choice="rejected">Rifiuta</button>
+            <button class="inline-legal-button" type="button" data-legal-open="cookie">Preferenze</button>
+          </div>
+        </section>
+      `
+    );
+  }
+
+  const savedCookieChoice = localStorage.getItem(cookieStorageKey);
+
+  if (savedCookieChoice === "accepted") {
+    loadExternalMaps();
+  }
+
+  if (!savedCookieChoice) {
+    window.setTimeout(() => {
+      document.querySelector("[data-cookie-banner]")?.classList.add("is-visible");
+    }, 650);
+  }
+};
+
+initLegalUi();
+
+document.addEventListener("click", (event) => {
+  const legalOpen = event.target.closest("[data-legal-open]");
+  const legalClose = event.target.closest("[data-legal-close]");
+  const cookieChoice = event.target.closest("[data-cookie-choice]");
+  const legalModal = document.querySelector("[data-legal-modal]");
+
+  if (legalOpen) {
+    event.preventDefault();
+    openLegalModal(legalOpen.dataset.legalOpen);
+  }
+
+  if (legalClose || event.target === legalModal) {
+    closeLegalModal();
+  }
+
+  if (cookieChoice) {
+    setCookieChoice(cookieChoice.dataset.cookieChoice);
+    if (cookieChoice.closest("[data-legal-modal]")) {
+      closeLegalModal();
+    }
+  }
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeLegalModal();
+  }
+});
+
 const setModalState = (modal, isOpen) => {
   if (!modal) return;
   modal.classList.toggle("is-open", isOpen);

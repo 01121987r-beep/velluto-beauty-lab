@@ -201,11 +201,17 @@
                   <em class="parking-note">Parcheggio a pagamento disponibile direttamente sotto il salone</em>
                   <div class="map-embed contact-mobile-map">
                     <iframe
-                      src="https://www.google.com/maps?q=Via%20dell%27Amba%20Aradam%2027%2C%2000184%20Roma%20RM&z=15&output=embed"
+                      src="about:blank"
+                      data-src="https://www.google.com/maps?q=Via%20dell%27Amba%20Aradam%2027%2C%2000184%20Roma%20RM&z=15&output=embed"
+                      data-cookie-map
                       loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade"
                       title="Mappa della sede di Velluto Beauty Lab in Via dell'Amba Aradam 27, 00184 Roma "
                     ></iframe>
+                    <div class="map-consent">
+                      <p>Per visualizzare la mappa Google accetta i cookie di terze parti.</p>
+                      <button class="button button-soft" type="button" data-cookie-choice="accepted">Accetta e visualizza</button>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -240,11 +246,17 @@
           <div class="contact-map-panel">
             <div class="map-embed">
               <iframe
-                src="https://www.google.com/maps?q=Via%20dell%27Amba%20Aradam%2027%2C%2000184%20Roma%20RM&z=15&output=embed"
+                src="about:blank"
+                data-src="https://www.google.com/maps?q=Via%20dell%27Amba%20Aradam%2027%2C%2000184%20Roma%20RM&z=15&output=embed"
+                data-cookie-map
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Mappa della sede di Velluto Beauty Lab in Via dell'Amba Aradam 27, 00184 Roma "
               ></iframe>
+              <div class="map-consent">
+                <p>Per visualizzare la mappa Google accetta i cookie di terze parti.</p>
+                <button class="button button-soft" type="button" data-cookie-choice="accepted">Accetta e visualizza</button>
+              </div>
             </div>
           </div>
         </div>
@@ -295,7 +307,10 @@
 
           <label class="checkbox-field" for="termini">
             <input id="termini" name="termini" type="checkbox" value="accettato" required />
-            <span>Acconsento al trattamento dei dati personali per essere ricontattato da Velluto Beauty Lab.</span>
+            <span>
+              Acconsento al trattamento dei dati personali per essere ricontattato da Velluto Beauty Lab e dichiaro di aver letto
+              <a href="#privacy" data-legal-open="privacy">Privacy</a> e <a href="#termini" data-legal-open="terms">Termini</a>.
+            </span>
           </label>
 
           <p class="contact-form-status" data-form-status aria-live="polite"></p>
