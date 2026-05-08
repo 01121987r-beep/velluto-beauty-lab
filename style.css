@@ -2549,17 +2549,19 @@ main section {
   }
 
   .hero {
-    padding: 104px 0 64px;
+    min-height: auto;
+    padding: 86px 0 54px;
   }
 
   .hero-copy {
-    padding-top: 18px;
+    padding-top: 0;
   }
 
   .hero-inner {
     grid-template-columns: 1fr;
-    min-height: calc(100svh - 150px);
+    min-height: auto;
     min-width: 0;
+    align-items: start;
   }
 
   .hero-copy p,
@@ -2660,24 +2662,67 @@ main section {
   }
 
   .section {
-    padding: 82px 0;
+    padding: 54px 0;
+  }
+
+  .section-header,
+  .section-header-tight {
+    margin-bottom: 28px;
+  }
+
+  .services-layout {
+    gap: 44px;
+  }
+
+  .service-feature {
+    gap: 26px;
+  }
+
+  .pricing-nav {
+    margin-bottom: 24px;
+  }
+
+  .pricing-group {
+    padding-top: 10px;
+  }
+
+  .price-row {
+    padding: 12px 0;
+  }
+
+  .intro-grid,
+  .story-grid,
+  .content-split,
+  .contact-grid,
+  .benefits-grid,
+  .signature-grid,
+  .footer-grid {
+    gap: 24px;
+  }
+
+  .capelli-page .section {
+    padding: 54px 0;
+  }
+
+  .cta-section {
+    padding-bottom: 64px;
   }
 
   .first-editorial-section {
-    padding-top: 112px !important;
+    padding-top: 88px !important;
   }
 
   .page-hero {
-    padding: 112px 0 70px;
+    padding: 88px 0 62px;
   }
 
   .contact-page main > .section:first-of-type {
-    padding-top: 112px;
+    padding-top: 88px;
   }
 
   .about-page .page-hero,
   .editorial-page .page-hero {
-    padding-top: 112px;
+    padding-top: 88px;
   }
 
   .story-media,
