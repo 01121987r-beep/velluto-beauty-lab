@@ -2582,6 +2582,50 @@ main section {
     overflow-wrap: break-word;
   }
 
+  .about-page .page-hero-grid,
+  .editorial-page .page-hero-grid {
+    display: contents;
+  }
+
+  .about-page .page-hero-grid > div:first-child,
+  .editorial-page .page-hero-grid > div:first-child {
+    display: contents;
+  }
+
+  .about-page .page-hero h1,
+  .editorial-page .page-hero h1 {
+    order: 1;
+  }
+
+  .about-page .page-hero .hero-photo-frame,
+  .editorial-page .page-hero .hero-photo-frame {
+    order: 2;
+    justify-self: stretch;
+    width: 100%;
+    margin: 8px 0 12px;
+  }
+
+  .about-page .page-hero .hero-photo-frame > img,
+  .editorial-page .page-hero .hero-photo-frame > img {
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+
+  .about-page .page-hero .lead,
+  .editorial-page .page-hero .lead {
+    order: 3;
+  }
+
+  .about-page .page-hero .hero-cta-inline,
+  .editorial-page .page-hero .hero-method-note {
+    order: 4;
+  }
+
+  .about-page .page-hero .cta-actions,
+  .editorial-page .page-hero .cta-actions {
+    order: 5;
+  }
+
   .page-hero-inner,
   .service-copy,
   .section-header,
