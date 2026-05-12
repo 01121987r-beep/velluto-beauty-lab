@@ -319,6 +319,7 @@ h3 {
 
 .about-page .page-hero h1 {
   font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1.06;
 }
 
 .about-page .page-hero-grid {
@@ -335,6 +336,7 @@ h3 {
 
 .editorial-page .page-hero h1 {
   font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1.06;
 }
 
 .editorial-page .page-hero-grid {
@@ -632,6 +634,10 @@ h3 {
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
   gap: 50px;
   align-items: end;
+}
+
+.page-hero h1 {
+  line-height: 1.06;
 }
 
 .lead {
@@ -2574,7 +2580,7 @@ main section {
   .about-page .page-hero h1 {
     max-width: 100%;
     font-size: clamp(2.45rem, 13vw, 3.35rem);
-    line-height: 0.98;
+    line-height: 1.04;
     overflow-wrap: break-word;
   }
 

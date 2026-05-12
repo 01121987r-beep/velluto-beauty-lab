@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vellutobeautylab.it/sitemap.xml
+Host: www.vellutobeautylab.it
